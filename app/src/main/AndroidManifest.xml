@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.elshaarawy.mobilia">
+
+    <application
+        android:name=".MobiliaApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activities.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.MainActivity"
+            android:label="@string/app_name" />
+
+        <provider
+            android:name=".Data.MobiliaProvider"
+            android:authorities="net.elshaarawy.mobilia" />
+
+        <service
+            android:name=".Services.LoadDataService"
+            android:exported="false" />
+
+        <activity android:name=".Activities.FurnitureDetailsActivity" />
+        <activity android:name=".Activities.ShopDetailsActivity" />
+        <activity android:name=".Activities.OfferDetailsActivity" />
+
+        <receiver android:name=".Widgets.OffersWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/offers_widget_info" />
+        </receiver>
+        <service
+            android:name=".Widgets.OffersWidgetRemoteViewsService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+    </application>
+
+</manifest>

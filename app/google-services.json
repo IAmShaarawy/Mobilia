@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "187632321691",
+    "firebase_url": "https://mobilia-b6bf9.firebaseio.com",
+    "project_id": "mobilia-b6bf9",
+    "storage_bucket": "mobilia-b6bf9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187632321691:android:fb5e739c48c20741",
+        "android_client_info": {
+          "package_name": "net.elshaarawy.mobilia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187632321691-lbg4arg73s83sc4qvsfqgch2montm7hh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.elshaarawy.mobilia",
+            "certificate_hash": "13c4eeb44976b518b8e5d7fcb9384b74b8ed070c"
+          }
+        },
+        {
+          "client_id": "187632321691-dms8ja6o8ertde5urs1sg516et7piq02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq2FWKwGCd_3YwhWlGKboCKCNuzcg2QIg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187632321691-dms8ja6o8ertde5urs1sg516et7piq02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

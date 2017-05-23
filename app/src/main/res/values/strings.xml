@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Mobilia</string>
+    <string name="title_home">Home</string>
+    <string name="title_shops">Shops</string>
+    <string name="title_offers">Offers</string>
+
+    <string name="progress_dialog_message">Loading...</string>
+    <string name="error">Error</string>
+
+
+
+    //content descriptions
+    <string name="cd_logo">Mobilia Logo</string>
+    <string name="cd_main_toolbar">Main Toolbar</string>
+    <string name="cd_widget_toolbar">Mobilia Offers Widget Toolbar</string>
+    <string name="cd_widget_toolbar_title">Mobilia Offers Widget Toolbar title</string>
+    <string name="cd_widget_offers_List">Mobilia Offers Widget List</string>
+
+
+
+    //null fragment messages
+    <string name="null_fragment_furniture">Select a Furniture</string>
+    <string name="null_fragment_shop">Select a Shop</string>
+    <string name="null_fragment_offer">Select an Offer</string>
+
+
+    //widget
+    <string name="widget_title">Mobilia Offers</string>
+    <string name="widget_open_app">launch the Mobilia to get offers</string>
+
+</resources>
