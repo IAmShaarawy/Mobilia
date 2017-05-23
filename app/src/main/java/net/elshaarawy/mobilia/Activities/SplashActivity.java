@@ -22,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final String BROADCAST_ACTION = "net.elshaarawy.mobilia.Activities.SplashActivity";
     private LocalBroadcastManager mLocalBroadcastManager;
     private PreferenceUtil mPreferenceUtil;
-    private ProgressDialog mProgressDialog;
+//    private ProgressDialog mProgressDialog;
     private boolean mChangeConfigurationFlag;
 
     @Override
@@ -34,20 +34,17 @@ public class SplashActivity extends AppCompatActivity {
         mLocalBroadcastManager = LocalBroadcastManager.getInstance(this);
         mPreferenceUtil = new PreferenceUtil(this, DefaultKeys.DEFAULT_SHARED_PREFERENCE);
 
-        mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setIndeterminate(true);
-        mProgressDialog.setMessage(getString(R.string.progress_dialog_message));
-        mProgressDialog.setCancelable(false);
-        mProgressDialog.setCanceledOnTouchOutside(false);
+//        mProgressDialog = new ProgressDialog(this);
+//        mProgressDialog.setIndeterminate(true);
+//        mProgressDialog.setMessage(getString(R.string.progress_dialog_message));
+//        mProgressDialog.setCancelable(false);
+//        mProgressDialog.setCanceledOnTouchOutside(false);
 
         if (!mPreferenceUtil.getBoolean(DefaultKeys.PREF_IS_FIRST_TIME) && mChangeConfigurationFlag) {
 
-            LoadDataService.startMe(this);
-
+            LoadDataService.startMe(this, true);
         }
-
-        if (mPreferenceUtil.getBoolean(DefaultKeys.PREF_IS_FIRST_TIME)) {
-
+        else {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -55,11 +52,7 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this.finish();
                 }
             }, 1000);
-
-        } else {
-            mProgressDialog.show();
         }
-
     }
 
     private BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
@@ -73,7 +66,7 @@ public class SplashActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(SplashActivity.this, getString(R.string.error), Toast.LENGTH_LONG).show();
             }
-            mProgressDialog.hide();
+//            mProgressDialog.hide();
         }
     };
 

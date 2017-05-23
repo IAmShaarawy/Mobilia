@@ -41,11 +41,11 @@ public class MobiliaDbHelper extends SQLiteOpenHelper {
     }
 
     private interface SQLTableCreator {
-        String CREATE_CATEGORIES = "CREATE TABLE" + CategoriesColumns.TABLE_NAME + " ( " +
+        String CREATE_CATEGORIES = "CREATE TABLE " + CategoriesColumns.TABLE_NAME + " ( " +
                 CategoriesColumns._ID + " INTEGER PRIMARY KEY , " +
                 CategoriesColumns.TITLE + " TEXT NOT NULL ); ";
 
-        String CREATE_FURNITURE = "CREATE TABLE" + FurnitureColumns.TABLE_NAME + " ( " +
+        String CREATE_FURNITURE = "CREATE TABLE " + FurnitureColumns.TABLE_NAME + " ( " +
                 FurnitureColumns._ID + " INTEGER PRIMARY KEY , " +
                 FurnitureColumns.TITLE + " TEXT NOT NULL , " +
                 FurnitureColumns.CATEGORY_ID + " INTEGER NOT NULL , " +
@@ -53,7 +53,7 @@ public class MobiliaDbHelper extends SQLiteOpenHelper {
                 FurnitureColumns.IMAGE + " TEXT NOT NULL , " +
                 FurnitureColumns.BODY + " TEXT NOT NULL ); ";
 
-        String CREATE_SHOPS = "CREATE TABLE" + ShopsColumns.TABLE_NAME + " ( " +
+        String CREATE_SHOPS = "CREATE TABLE " + ShopsColumns.TABLE_NAME + " ( " +
                 ShopsColumns._ID + " INTEGER PRIMARY KEY , " +
                 ShopsColumns.TITLE + " TEXT NOT NULL , " +
                 ShopsColumns.CATEGORY_ID + " INTEGER NOT NULL , " +
@@ -62,7 +62,7 @@ public class MobiliaDbHelper extends SQLiteOpenHelper {
                 ShopsColumns.WEBSITE + " TEXT NOT NULL , " +
                 ShopsColumns.ABOUT + " TEXT NOT NULL ); ";
 
-        String CREATE_OFFERS = "CREATE TABLE" + OffersColumns.TABLE_NAME + " ( " +
+        String CREATE_OFFERS = "CREATE TABLE " + OffersColumns.TABLE_NAME + " ( " +
                 OffersColumns._ID + " INTEGER PRIMARY KEY , " +
                 OffersColumns.TITLE + " TEXT NOT NULL , " +
                 OffersColumns.CATEGORY_ID + " INTEGER NOT NULL , " +

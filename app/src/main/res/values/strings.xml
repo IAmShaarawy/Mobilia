@@ -28,4 +28,20 @@
     <string name="widget_title">Mobilia Offers</string>
     <string name="widget_open_app">launch the Mobilia to get offers</string>
 
+    //Database Keys
+    <string name="fb_categories" translatable="false">categories</string>
+    <string name="fb_furniture" translatable="false">furniture</string>
+    <string name="fb_offers" translatable="false">offers</string>
+    <string name="fb_shops" translatable="false">shops</string>
+
+    <string name="fb_body" translatable="false">body</string>
+    <string name="fb_category" translatable="false">category</string>
+    <string name="fb_img" translatable="false">img</string>
+    <string name="fb_shop" translatable="false">shop</string>
+    <string name="fb_title" translatable="false">title</string>
+    <string name="fb_about" translatable="false">about</string>
+    <string name="fb_phone" translatable="false">phone</string>
+    <string name="fb_website" translatable="false">website</string>
+
+
 </resources>
