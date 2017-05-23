@@ -9,14 +9,22 @@ import android.os.Parcelable;
 
 public class CategoryEntity implements Parcelable {
     private long id;
+    private String title;
+
+    public CategoryEntity(long id, String title) {
+        this.id = id;
+        this.title = title;
+    }
 
     protected CategoryEntity(Parcel in) {
         id = in.readLong();
+        title = in.readString();
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(id);
+        dest.writeString(title);
     }
 
     @Override
@@ -42,5 +50,13 @@ public class CategoryEntity implements Parcelable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

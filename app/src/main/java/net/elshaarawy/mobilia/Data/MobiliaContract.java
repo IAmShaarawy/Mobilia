@@ -1,5 +1,6 @@
 package net.elshaarawy.mobilia.Data;
 
+import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
@@ -41,7 +42,7 @@ public class MobiliaContract {
         int INDEX_BODY = 5;
     }
 
-    public interface ShopsColumns extends BaseColumns{
+    public interface ShopsColumns extends BaseColumns {
 
         String TABLE_NAME = "shops";
 
@@ -84,19 +85,35 @@ public class MobiliaContract {
 
 
     public interface Paths {
-        //TODO declare paths Strings
+        String CATEGORIES = "categories";
+        String FURNITURE = "furniture";
+        String SHOPS = "shops";
+        String OFFERS = "offers";
+        String SHOPS_OFFERS = "shops_offers";
     }
 
     public interface ProviderUris {
-        //TODO Build Mobilia Provider Uris from Paths and authorities
+        Uri CONTENT_CATEGORIES = BASE_CONTENT_URI.buildUpon().appendPath(Paths.CATEGORIES).build();
+        Uri CONTENT_FURNATURE = BASE_CONTENT_URI.buildUpon().appendPath(Paths.FURNITURE).build();
+        Uri CONTENT_SHOPS = BASE_CONTENT_URI.buildUpon().appendPath(Paths.SHOPS).build();
+        Uri CONTENT_OFFERS = BASE_CONTENT_URI.buildUpon().appendPath(Paths.OFFERS).build();
+        Uri CONTENT_SHOPS_OFFERS = BASE_CONTENT_URI.buildUpon().appendPath(Paths.SHOPS_OFFERS).build();
     }
 
     public interface MatchingCodes {
-        //TODO declare Matching codes Integers for Uri Matcher
+        int CATEGORIES = 1000;
+        int FURNITURE = 1010;
+        int SHOPS = 1020;
+        int OFFERS = 1030;
+        int SHOPS_OFFERS = 1040;
     }
 
     public interface MimeTypes {
-        //TODO declare MimeTypes Strings of Mobilia Provider
+        String CATEGORIES_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.CATEGORIES;
+        String FURNITURE_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.FURNITURE;
+        String SHOPS_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.SHOPS;
+        String OFFERS_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.OFFERS;
+        String SHOPS_OFFERS_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.SHOPS_OFFERS;
     }
 
 }
