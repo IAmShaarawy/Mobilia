@@ -12,14 +12,16 @@ public class FurnitureEntity implements Parcelable {
     private String title;
     private long categoryId,shopId;
     private String image,body;
+    private ShopEntity shopEntity;
 
-    public FurnitureEntity(long id, String title, long categoryId, long shopId, String image, String body) {
+    public FurnitureEntity(long id, String title, long categoryId, long shopId, String image, String body, ShopEntity shopEntity) {
         this.id = id;
         this.title = title;
         this.categoryId = categoryId;
         this.shopId = shopId;
         this.image = image;
         this.body = body;
+        this.shopEntity = shopEntity;
     }
 
     protected FurnitureEntity(Parcel in) {
@@ -29,6 +31,7 @@ public class FurnitureEntity implements Parcelable {
         shopId = in.readLong();
         image = in.readString();
         body = in.readString();
+        shopEntity = in.readParcelable(ShopEntity.class.getClassLoader());
     }
 
     @Override
@@ -39,6 +42,7 @@ public class FurnitureEntity implements Parcelable {
         dest.writeLong(shopId);
         dest.writeString(image);
         dest.writeString(body);
+        dest.writeParcelable(shopEntity, flags);
     }
 
     @Override
@@ -104,5 +108,13 @@ public class FurnitureEntity implements Parcelable {
 
     public void setBody(String body) {
         this.body = body;
+    }
+
+    public ShopEntity getShopEntity() {
+        return shopEntity;
+    }
+
+    public void setShopEntity(ShopEntity shopEntity) {
+        this.shopEntity = shopEntity;
     }
 }
