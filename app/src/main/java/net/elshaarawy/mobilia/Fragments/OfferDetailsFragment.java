@@ -33,18 +33,21 @@ public class OfferDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //Handle null data
-        if (mOfferEntity==null){
+        if (mOfferEntity == null) {
             View nullView = inflater.inflate(R.layout.layout_null_fragment, container, false);
             TextView massage = (TextView) nullView.findViewById(R.id.fragment_null_text_view);
             massage.setText(getContext().getString(R.string.null_fragment_offer));
             return nullView;
         }
         View view = inflater.inflate(R.layout.fragment_offer_details, container, false);
+
+        TextView textView = (TextView) view.findViewById(R.id.textView);
+        textView.setText(mOfferEntity.getTitle());
         //TODO Complete Offer Details Fragment
         return view;
     }
 
-    public static void attachMe(FragmentManager fragmentManager, int layout, OfferEntity offerEntity, boolean isLarge) {
+    public static void attachMe(FragmentManager fragmentManager, String tag, int layout, OfferEntity offerEntity, boolean isLarge) {
         Bundle bundle = new Bundle();
         bundle.putParcelable(EXTRA_OFFER, offerEntity);
         bundle.putBoolean(EXTRA_IS_LARGE, isLarge);
@@ -52,7 +55,16 @@ public class OfferDetailsFragment extends Fragment {
         detailsFragment.setArguments(bundle);
         fragmentManager
                 .beginTransaction()
-                .replace(layout, detailsFragment)
+                .replace(layout, detailsFragment, tag)
+                .commit();
+    }
+
+    public static void reattachMe(FragmentManager fragmentManager, String tag, int layout) {
+
+        OfferDetailsFragment detailsFragment = (OfferDetailsFragment) fragmentManager.findFragmentByTag(tag);
+        fragmentManager
+                .beginTransaction()
+                .replace(layout, detailsFragment, tag)
                 .commit();
     }
 }

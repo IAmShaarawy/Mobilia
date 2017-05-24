@@ -22,11 +22,11 @@ public class FurnitureDetailsActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_furniture_details);
         if (findViewById(R.id.furniture_details_container) != null) {
-            FurnitureDetailsFragment.attachMe(getSupportFragmentManager(),
+            FurnitureDetailsFragment.attachMe(getSupportFragmentManager(),null,
                     R.id.furniture_details_container,
                     mFurnitureEntity, false);
         } else {
-            //TODO Handle large screen
+            finish();
         }
     }
 

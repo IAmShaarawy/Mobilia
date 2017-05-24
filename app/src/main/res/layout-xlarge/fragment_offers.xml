@@ -20,7 +20,7 @@
         android:spinnerMode="dropdown" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView_offers"
+        android:id="@+id/recyclerView_offers_xl"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/cd_offers_list"

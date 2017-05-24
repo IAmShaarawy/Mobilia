@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="2dp"
+    android:layout_width="match_parent"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_marginBottom="8dp"
+    android:contentDescription="@string/cd_item_Shop"
+    android:layout_marginRight="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_height="wrap_content">
 
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_shop_img"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginTop="0dp"
+            android:contentDescription="@string/cd_item_Shop_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_shop_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:contentDescription="@string/cd_item_Shop_title"
+            android:layout_marginTop="8dp"
+            android:textSize="18dp"
+            android:textColor="@color/primary_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/item_shop_img"
+            tools:text="Shop Title" />
+
+        <TextView
+            android:id="@+id/item_shop_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/cd_item_Shop_phone"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="0dp"
+            android:textSize="14dp"
+            android:textColor="@color/secondary_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/item_shop_title"
+            app:layout_constraintRight_toRightOf="@+id/item_shop_title"
+            app:layout_constraintTop_toBottomOf="@+id/item_shop_title"
+            tools:text="+2010967820" />
+    </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

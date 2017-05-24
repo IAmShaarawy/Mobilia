@@ -22,11 +22,11 @@ public class OfferDetailsActivity extends AppCompatActivity {
         mOfferEntity = getIntent().getParcelableExtra(EXTRA_OFFER);
 
         if (findViewById(R.id.offer_details_container) != null) {
-            OfferDetailsFragment.attachMe(getSupportFragmentManager(),
+            OfferDetailsFragment.attachMe(getSupportFragmentManager(),null,
                     R.id.offer_details_container,
                     mOfferEntity, false);
         } else {
-            //TODO Handle large screen
+            finish();
         }
     }
 

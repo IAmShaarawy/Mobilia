@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import net.elshaarawy.mobilia.Data.Entities.CategoryEntity;
 import net.elshaarawy.mobilia.R;
@@ -49,7 +50,7 @@ public class CategoriesAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         CategoryEntity categoryEntity = mCategoryEntities.get(position);
-        // TODO holder.bind();
+         holder.bind(categoryEntity.getTitle());
         return convertView;
     }
 
@@ -60,13 +61,14 @@ public class CategoriesAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-
+        TextView textView;
         public ViewHolder(View view) {
-
+            textView = (TextView) view;
         }
 
         public void bind(String text) {
-            //TODO bind category data
+            textView.setText(text);
+            textView.setContentDescription(text);
         }
     }
 }

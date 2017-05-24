@@ -22,11 +22,11 @@ public class ShopDetailsActivity extends AppCompatActivity {
         mShopEntity = getIntent().getParcelableExtra(EXTRA_SHOP);
 
         if (findViewById(R.id.shop_details_container) != null) {
-            ShopDetailsFragment.attachMe(getSupportFragmentManager(),
+            ShopDetailsFragment.attachMe(getSupportFragmentManager(),null,
                     R.id.shop_details_container,
                     mShopEntity, false);
         } else {
-            //TODO Handle large screen
+            finish();
         }
     }
 

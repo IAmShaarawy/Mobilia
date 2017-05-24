@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:id="@+id/item_category"
+    android:contentDescription="@string/cd_item_category"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:maxWidth="250dp"
+    android:maxLines="1"
+    android:ellipsize="marquee"
+    android:gravity="center"
+    android:minHeight="@dimen/spinner_height"
+    android:textSize="20sp">
 
 </TextView>

@@ -2,11 +2,18 @@ package net.elshaarawy.mobilia.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.facebook.drawee.view.SimpleDraweeView;
+import com.squareup.picasso.Picasso;
 
 import net.elshaarawy.mobilia.Data.Entities.FurnitureEntity;
+import net.elshaarawy.mobilia.Data.Entities.ShopEntity;
 import net.elshaarawy.mobilia.R;
 
 import java.util.List;
@@ -36,7 +43,11 @@ public class FurnitureAdapter extends RecyclerView.Adapter<FurnitureAdapter.Furn
     @Override
     public void onBindViewHolder(FurnitureHolder holder, int position) {
         FurnitureEntity furnitureEntity = mFurnitureEntities.get(position);
-        // TODO holder.bindData();
+        ShopEntity shopEntity = furnitureEntity.getShopEntity();
+          holder.bindData(furnitureEntity.getImage(),
+                  furnitureEntity.getTitle(),
+                  shopEntity.getImage(),
+                  shopEntity.getTitle());
     }
 
     @Override
@@ -52,13 +63,34 @@ public class FurnitureAdapter extends RecyclerView.Adapter<FurnitureAdapter.Furn
 
     class FurnitureHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        View container;
+        ImageView furnitureImgView;
+        SimpleDraweeView shopImgView;
+        TextView furnitureTitleView, shopTitleView;
         public FurnitureHolder(View itemView) {
             super(itemView);
             itemView.setOnClickListener(this);
+            container = itemView;
+            furnitureImgView = (ImageView) itemView.findViewById(R.id.item_furniture_image);
+            shopImgView = (SimpleDraweeView) itemView.findViewById(R.id.item_furniture_shop_image);
+            furnitureTitleView = (TextView) itemView.findViewById(R.id.item_furniture_title);
+            shopTitleView = (TextView) itemView.findViewById(R.id.item_furniture_shop);
         }
 
         public void bindData(String furnitureImg, String furnitureTitle, String shopImg, String shopTitle) {
-            //TODO bind Furniture Item Data
+            Picasso.with(container.getContext())
+                    .load(furnitureImg)
+                    .placeholder(R.color.loading)
+                    .error(R.color.error)
+                    .into(furnitureImgView);
+
+            furnitureTitleView.setText(furnitureTitle);
+            furnitureTitleView.setContentDescription(furnitureTitle);
+
+            shopImgView.setImageURI(shopImg);
+
+            shopTitleView.setText(shopTitle);
+            shopTitleView.setContentDescription(shopTitle);
         }
 
         @Override

@@ -6,6 +6,7 @@
 
     <string name="progress_dialog_message">Loading...</string>
     <string name="error">Error</string>
+    <string name="all_categories">All</string>
 
 
 
@@ -15,6 +16,29 @@
     <string name="cd_widget_toolbar">Mobilia Offers Widget Toolbar</string>
     <string name="cd_widget_toolbar_title">Mobilia Offers Widget Toolbar title</string>
     <string name="cd_widget_offers_List">Mobilia Offers Widget List</string>
+
+    <string name="cd_categories_list">Categories List</string>
+    <string name="cd_furniture_list">Furniture List</string>
+    <string name="cd_shops_list">Shops List</string>
+    <string name="cd_offers_list">Offers List</string>
+
+    <string name="cd_item_category">category</string>
+    <string name="cd_item_furniture">Furniture</string>
+    <string name="cd_item_furniture_title">furniture title</string>
+    <string name="cd_item_furniture_img">furniture Image</string>
+    <string name="cd_item_furniture_shop_title">furniture shop title</string>
+    <string name="cd_item_furniture_shop_image">furniture shop image</string>
+
+    <string name="cd_item_Shop">shop</string>
+    <string name="cd_item_Shop_image">shop image</string>
+    <string name="cd_item_Shop_title">shop title</string>
+    <string name="cd_item_Shop_phone">shop phone</string>
+
+    <string name="cd_item_offer">offer</string>
+    <string name="cd_item_offer_shop_img">Shop Image</string>
+    <string name="cd_item_offer_shop_title">Shop Title</string>
+    <string name="cd_item_offer_img">Offer Image</string>
+    <string name="cd_item_offer_title">Offer Title</string>
 
 
 

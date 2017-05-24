@@ -1,9 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/background_light_gray"
-    android:layout_height="match_parent">
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <Spinner
+        android:id="@+id/spinner_shops"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:contentDescription="@string/cd_categories_list"
+        android:dropDownVerticalOffset="@dimen/spinner_height"
+        android:elevation="@dimen/spinner_elevation"
+        android:spinnerMode="dropdown" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_shops"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/cd_shops_list"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

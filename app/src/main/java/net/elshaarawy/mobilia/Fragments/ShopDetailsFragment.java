@@ -24,7 +24,7 @@ public class ShopDetailsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Bundle bundle = new Bundle();
+        Bundle bundle = getArguments();
         mShopEntity = bundle.getParcelable(EXTRA_SHOP);
     }
 
@@ -40,10 +40,13 @@ public class ShopDetailsFragment extends Fragment {
         }
         View view = inflater.inflate(R.layout.fragment_shop_detials, container, false);
         //TODO Complete Shop Details Fragment
+
+        TextView textView = (TextView) view.findViewById(R.id.textView);
+        textView.setText(mShopEntity.getTitle());
         return view;
     }
 
-    public static void attachMe(FragmentManager fragmentManager, int layout, ShopEntity shopEntity,boolean isLarge) {
+    public static void attachMe(FragmentManager fragmentManager,String tag, int layout, ShopEntity shopEntity,boolean isLarge) {
         Bundle bundle = new Bundle();
         bundle.putParcelable(EXTRA_SHOP, shopEntity);
         bundle.putBoolean(EXTRA_IS_LARGE,isLarge);
@@ -51,7 +54,16 @@ public class ShopDetailsFragment extends Fragment {
         detailsFragment.setArguments(bundle);
         fragmentManager
                 .beginTransaction()
-                .replace(layout, detailsFragment)
+                .replace(layout, detailsFragment,tag)
+                .commit();
+    }
+
+    public static void reattachMe(FragmentManager fragmentManager,String tag, int layout) {
+
+        ShopDetailsFragment detailsFragment = (ShopDetailsFragment) fragmentManager.findFragmentByTag(tag);
+        fragmentManager
+                .beginTransaction()
+                .replace(layout, detailsFragment,tag)
                 .commit();
     }
 }

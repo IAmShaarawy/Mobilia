@@ -233,7 +233,14 @@ public class MobiliaProvider extends ContentProvider {
                         + " = "
                         + FurnitureColumns.TABLE_NAME + "."
                         + FurnitureColumns.CATEGORY_ID
-                        + " )";
+                        + " ) JOIN " + ShopsColumns.TABLE_NAME
+                        + " ON ( "
+                        + ShopsColumns.TABLE_NAME + "."
+                        + ShopsColumns._ID
+                        + " = "
+                        + FurnitureColumns.TABLE_NAME + "."
+                        + FurnitureColumns.SHOP_ID
+                        + " ) ";
 
         String ShopsTable =
                 CategoriesColumns.TABLE_NAME + " JOIN "
@@ -255,7 +262,14 @@ public class MobiliaProvider extends ContentProvider {
                         + " = "
                         + OffersColumns.TABLE_NAME + "."
                         + OffersColumns.CATEGORY_ID
-                        + " )";
+                        + " ) JOIN " + ShopsColumns.TABLE_NAME
+                        + " ON ( "
+                        + ShopsColumns.TABLE_NAME + "."
+                        + ShopsColumns._ID
+                        + " = "
+                        + OffersColumns.TABLE_NAME + "."
+                        + OffersColumns.SHOP_ID
+                        + " ) ";
         String ShopsOffersTable =
                 ShopsColumns.TABLE_NAME + " JOIN "
                         + OffersColumns.TABLE_NAME

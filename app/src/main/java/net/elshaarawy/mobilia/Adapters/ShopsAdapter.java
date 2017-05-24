@@ -5,6 +5,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import net.elshaarawy.mobilia.Data.Entities.ShopEntity;
 import net.elshaarawy.mobilia.R;
@@ -36,7 +40,7 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.ShopHolder> 
     @Override
     public void onBindViewHolder(ShopHolder holder, int position) {
         ShopEntity shopEntity = mShopEntities.get(position);
-        // TODO holder.bindData();
+        holder.bindData(shopEntity.getImage(), shopEntity.getTitle(), shopEntity.getPhone());
     }
 
     @Override
@@ -52,13 +56,34 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.ShopHolder> 
 
     class ShopHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        View view;
+        ImageView imgShop;
+        TextView titleShop, phoneShop;
+
         public ShopHolder(View itemView) {
             super(itemView);
+
+            view = itemView;
+            imgShop = (ImageView) itemView.findViewById(R.id.item_shop_img);
+            titleShop = (TextView) itemView.findViewById(R.id.item_shop_title);
+            phoneShop = (TextView) itemView.findViewById(R.id.item_shop_phone);
+
             itemView.setOnClickListener(this);
         }
 
         public void bindData(String shopImg, String shopTitle, String shopPhone) {
-            //TODO bind Shop Item Data
+
+            Picasso.with(view.getContext())
+                    .load(shopImg)
+                    .error(R.color.error)
+                    .placeholder(R.color.loading)
+                    .into(imgShop);
+
+            titleShop.setText(shopTitle);
+            titleShop.setContentDescription(shopTitle);
+
+            phoneShop.setText(shopPhone);
+            phoneShop.setContentDescription(shopPhone);
         }
 
         @Override
