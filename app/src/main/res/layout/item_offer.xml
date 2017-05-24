@@ -27,7 +27,7 @@
         fresco:placeholderImage="@color/f_loading"
         fresco:failureImage="@color/f_error"
         fresco:roundAsCircle="true"
-        fresco:roundingBorderColor="@color/colorPrimary"
+        fresco:roundingBorderColor="@color/colorAccent"
         fresco:roundingBorderWidth="1dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp"

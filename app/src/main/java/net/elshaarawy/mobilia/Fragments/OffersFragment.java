@@ -217,7 +217,7 @@ public class OffersFragment extends Fragment implements LoaderManager.LoaderCall
                     offerEntities = new ArrayList<>(offersRowsCount);
                     OfferEntity offerEntity;
                     for (int i = 0; i < offersRowsCount; i++) {
-                        data.moveToPosition(i);
+                        data.moveToPosition(offersRowsCount-i-1);
                         offerEntity = new OfferEntity(
                                 data.getLong(data.getColumnIndex(OffersColumns._ID)),
                                 data.getString(data.getColumnIndex(OffersColumns.TITLE)),

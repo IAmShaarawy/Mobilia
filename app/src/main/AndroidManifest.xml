@@ -25,6 +25,7 @@
 
         <provider
             android:name=".Data.MobiliaProvider"
+            android:exported="true"
             android:authorities="net.elshaarawy.mobilia" />
 
         <service

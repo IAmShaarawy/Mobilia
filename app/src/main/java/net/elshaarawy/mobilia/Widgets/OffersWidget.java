@@ -27,9 +27,10 @@ public class OffersWidget extends AppWidgetProvider {
         PreferenceUtil preferenceUtil = new PreferenceUtil(context, DefaultKeys.DEFAULT_SHARED_PREFERENCE);
 
         if (preferenceUtil.getBoolean(DefaultKeys.PREF_IS_FIRST_TIME)) {
-            // TODO views.setRemoteAdapter(R.id.widget_list,new Intent(context,OffersWidgetRemoteViewsService.class));
+            views.setRemoteAdapter(R.id.widget_list, new Intent(context, OffersWidgetRemoteViewsService.class));
             views.setViewVisibility(R.id.widget_list, View.VISIBLE);
             views.setViewVisibility(R.id.widget_placeholder, View.GONE);
+
         } else {
             views.setViewVisibility(R.id.widget_list, View.GONE);
             views.setViewVisibility(R.id.widget_placeholder, View.VISIBLE);
