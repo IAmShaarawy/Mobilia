@@ -1,6 +1,7 @@
 package net.elshaarawy.mobilia.Adapters;
 
 import android.content.Context;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,11 +91,14 @@ public class OffersAdapter extends RecyclerView.Adapter<OffersAdapter.OfferHolde
 
         @Override
         public void onClick(View v) {
-            mItemClickListener.onItemClick(mOfferEntities.get(getAdapterPosition()));
+            Pair<View, String>[] pairs = new Pair[2];
+            pairs[0] = new Pair<>((View) shopImgView,shopImgView.getTransitionName());
+            pairs[1] = new Pair<>((View) offerImgView,offerImgView.getTransitionName());
+            mItemClickListener.onItemClick(mOfferEntities.get(getAdapterPosition()),pairs);
         }
     }
 
     public interface OffersItemClickListener {
-        void onItemClick(OfferEntity offerEntity);
+        void onItemClick(OfferEntity offerEntity,Pair<View, String>[] sharedElements);
     }
 }

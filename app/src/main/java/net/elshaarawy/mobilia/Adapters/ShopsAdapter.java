@@ -1,6 +1,7 @@
 package net.elshaarawy.mobilia.Adapters;
 
 import android.content.Context;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -88,11 +89,14 @@ public class ShopsAdapter extends RecyclerView.Adapter<ShopsAdapter.ShopHolder> 
 
         @Override
         public void onClick(View v) {
-            mItemClickListener.onItemClick(mShopEntities.get(getAdapterPosition()));
+            Pair<View,String>[] pairs = new Pair[2];
+            pairs[0]= new Pair<>((View) imgShop,imgShop.getTransitionName());
+            pairs[1]  = new Pair<>((View) titleShop,titleShop.getTransitionName());
+            mItemClickListener.onItemClick(mShopEntities.get(getAdapterPosition()),pairs);
         }
     }
 
     public interface ShopItemClickListener {
-        void onItemClick(ShopEntity shopEntity);
+        void onItemClick(ShopEntity shopEntity, Pair<View,String>[] sharedElements);
     }
 }

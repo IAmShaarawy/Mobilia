@@ -1,6 +1,7 @@
 package net.elshaarawy.mobilia.Adapters;
 
 import android.content.Context;
+import android.support.v4.util.Pair;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -95,11 +96,14 @@ public class FurnitureAdapter extends RecyclerView.Adapter<FurnitureAdapter.Furn
 
         @Override
         public void onClick(View v) {
-            mItemClickListener.onItemClick(mFurnitureEntities.get(getAdapterPosition()));
+            Pair<View,String> [] pairs = new Pair[2];
+            pairs[0] = new Pair<>((View) furnitureImgView,furnitureImgView.getTransitionName());
+            pairs[1] = new Pair<>((View) shopImgView,shopImgView.getTransitionName());
+            mItemClickListener.onItemClick(mFurnitureEntities.get(getAdapterPosition()),pairs);
         }
     }
 
     public interface FurnitureItemClickListener {
-        void onItemClick(FurnitureEntity furnitureEntity);
+        void onItemClick(FurnitureEntity furnitureEntity,Pair<View,String>[] sharedElement);
     }
 }

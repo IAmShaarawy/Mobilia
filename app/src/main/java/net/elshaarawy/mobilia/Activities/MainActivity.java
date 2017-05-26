@@ -2,8 +2,11 @@ package net.elshaarawy.mobilia.Activities;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.util.Pair;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
 
 import net.elshaarawy.mobilia.Adapters.FurnitureAdapter;
 import net.elshaarawy.mobilia.Adapters.OffersAdapter;
@@ -125,7 +128,7 @@ public class MainActivity
     }
 
     @Override
-    public void onItemClick(FurnitureEntity furnitureEntity) {
+    public void onItemClick(FurnitureEntity furnitureEntity, Pair<View,String> [] sharedElements) {
 
         mFurnitureEntity = furnitureEntity;
         mFurnitureTag = furnitureEntity.getImage() + furnitureEntity.getTitle();
@@ -148,13 +151,13 @@ public class MainActivity
 
         } else {
 
-            FurnitureDetailsActivity.startMe(this, furnitureEntity);
+            FurnitureDetailsActivity.startMe(this, furnitureEntity,sharedElements);
 
         }
     }
 
     @Override
-    public void onItemClick(ShopEntity shopEntity) {
+    public void onItemClick(ShopEntity shopEntity,Pair<View,String> [] sharedElements) {
         mShopEntity = shopEntity;
         mShopsTag = shopEntity.getImage() + shopEntity.getTitle();
 
@@ -173,12 +176,12 @@ public class MainActivity
                 ShopDetailsFragment.reattachMe(mFragmentManager, mShopsTag, R.id.main_details_container_xl);
 
         } else {
-            ShopDetailsActivity.startMe(this, shopEntity);
+            ShopDetailsActivity.startMe(this, shopEntity,sharedElements);
         }
     }
 
     @Override
-    public void onItemClick(OfferEntity offerEntity) {
+    public void onItemClick(OfferEntity offerEntity,Pair<View, String>[] sharedElements) {
         mOfferEntity = offerEntity;
         mOffersTag = offerEntity.getImage() + offerEntity.getTitle();
 
@@ -201,7 +204,7 @@ public class MainActivity
 
         } else {
 
-            OfferDetailsActivity.startMe(this, offerEntity);
+            OfferDetailsActivity.startMe(this, offerEntity,sharedElements);
 
         }
     }
