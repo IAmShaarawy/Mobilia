@@ -8,6 +8,9 @@
     <string name="error">Error</string>
     <string name="all_categories">All</string>
 
+    <string name="key_shop_about">key_shop_detail_about</string>
+    <string name="key_shop_offers">key_shop_detail_offers</string>
+
 
 
     //content descriptions
@@ -40,6 +43,12 @@
     <string name="cd_item_offer_img">Offer Image</string>
     <string name="cd_item_offer_title">Offer Title</string>
 
+    <string name="cd_shop_about">about shop</string>
+    <string name="cd_shop_about_tab">About Shop Tab</string>
+    <string name="cd_shop_offers_tab">Shop Offers Tab</string>
+
+    <string name="cd_offer_body">Offer Body</string>
+    <string name="cd_furniture_body">Offer Body</string>
 
 
     //null fragment messages
@@ -66,6 +75,13 @@
     <string name="fb_about" translatable="false">about</string>
     <string name="fb_phone" translatable="false">phone</string>
     <string name="fb_website" translatable="false">website</string>
+
+    //shop details strings
+    <string name="shop_call">Call</string>
+    <string name="shop_website">Visit Website</string>
+    <string name="shop_about">About </string>
+    <string name="shop_offers">Offers</string>
+    <string name="shop_invalid_website">Invalid Web Site</string>
 
 
 </resources>

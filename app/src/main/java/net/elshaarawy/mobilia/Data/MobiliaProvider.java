@@ -72,15 +72,6 @@ public class MobiliaProvider extends ContentProvider {
                         selectionArgs, null, null,
                         sortOrder);
                 break;
-            case MatchingCodes.SHOPS_OFFERS:
-                qb.setTables(JoinedTables.ShopsOffersTable);
-                cursor = qb.query(
-                        database,
-                        projection,
-                        selection,
-                        selectionArgs, null, null,
-                        sortOrder);
-                break;
             default:
                 throw new UnsupportedOperationException("Unknown Uri: " + uri);
         }
@@ -108,8 +99,6 @@ public class MobiliaProvider extends ContentProvider {
             case MatchingCodes.OFFERS:
                 return MimeTypes.OFFERS_TYPE;
 
-            case MatchingCodes.SHOPS_OFFERS:
-                return MimeTypes.SHOPS_OFFERS_TYPE;
 
             default:
                 throw new UnsupportedOperationException("Unknown Uri: " + uri);
@@ -218,7 +207,6 @@ public class MobiliaProvider extends ContentProvider {
         uriMatcher.addURI(AUTHORITY, Paths.FURNITURE, MatchingCodes.FURNITURE);
         uriMatcher.addURI(AUTHORITY, Paths.SHOPS, MatchingCodes.SHOPS);
         uriMatcher.addURI(AUTHORITY, Paths.OFFERS, MatchingCodes.OFFERS);
-        uriMatcher.addURI(AUTHORITY, Paths.SHOPS_OFFERS, MatchingCodes.SHOPS_OFFERS);
 
         return uriMatcher;
     }
@@ -270,16 +258,6 @@ public class MobiliaProvider extends ContentProvider {
                         + OffersColumns.TABLE_NAME + "."
                         + OffersColumns.SHOP_ID
                         + " ) ";
-        String ShopsOffersTable =
-                ShopsColumns.TABLE_NAME + " JOIN "
-                        + OffersColumns.TABLE_NAME
-                        + " ON ( "
-                        + ShopsColumns.TABLE_NAME + "."
-                        + ShopsColumns._ID
-                        + " = "
-                        + OffersColumns.TABLE_NAME + "."
-                        + OffersColumns.SHOP_ID
-                        + " )";
     }
 
 }

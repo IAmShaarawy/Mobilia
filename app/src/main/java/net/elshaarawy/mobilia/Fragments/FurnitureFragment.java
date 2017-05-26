@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_CATEGORIES;
-import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_FURNATURE;
+import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_FURNITURE;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.FurnitureColumns;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.CategoriesColumns;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.ShopsColumns;
@@ -173,11 +173,11 @@ public class FurnitureFragment extends Fragment implements LoaderManager.LoaderC
             case FURNITURE_LOADER_ID:
                 Long cat_id = args.getLong(EXTRA_CATEGORY_ID);
                 if (cat_id == 0) {
-                    cursor = new CursorLoader(getContext(), CONTENT_FURNATURE, null, null, null, null);
+                    cursor = new CursorLoader(getContext(), CONTENT_FURNITURE, null, null, null, null);
                 } else {
                     String selection = FurnitureColumns.TABLE_NAME + "." + FurnitureColumns.CATEGORY_ID + "=?";
                     String[] selectionArgs = new String[]{String.valueOf(cat_id)};
-                    cursor = new CursorLoader(getContext(), CONTENT_FURNATURE, null, selection, selectionArgs, null);
+                    cursor = new CursorLoader(getContext(), CONTENT_FURNITURE, null, selection, selectionArgs, null);
                 }
                 break;
             default:

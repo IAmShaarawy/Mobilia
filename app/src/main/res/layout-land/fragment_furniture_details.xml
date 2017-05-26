@@ -10,12 +10,12 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="180dp"
         android:fitsSystemWindows="true"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/d_offer_co_toolbar"
+            android:id="@+id/d_furniture_co_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="@dimen/toolbar_elevation"
@@ -27,7 +27,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/d_offer_img"
+                android:id="@+id/d_furniture_img"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
@@ -36,7 +36,7 @@
                 app:layout_collapseMode="parallax" />
 
             <android.support.v7.widget.Toolbar
-                android:id="@+id/d_offer_toolbar"
+                android:id="@+id/d_furniture_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin" />
@@ -62,7 +62,7 @@
                 android:orientation="horizontal">
 
                 <com.facebook.drawee.view.SimpleDraweeView
-                    android:id="@+id/d_offer_shop_image"
+                    android:id="@+id/d_furniture_shop_image"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_marginBottom="8dp"
@@ -76,7 +76,7 @@
                     fresco:roundingBorderWidth="1dp" />
 
                 <TextView
-                    android:id="@+id/d_offer_shop_title"
+                    android:id="@+id/d_furniture_shop_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -88,14 +88,14 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/d_offer_body"
+                android:id="@+id/d_furniture_body"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:contentDescription="@string/cd_offer_body"
+                android:contentDescription="@string/cd_furniture_body"
                 android:textColor="@color/secondary_text"
                 android:textSize="16sp"
                 tools:text="gsbsfgbfsgb" />

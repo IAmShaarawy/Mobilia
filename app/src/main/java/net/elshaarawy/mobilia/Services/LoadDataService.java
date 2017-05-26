@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,19 +16,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import net.elshaarawy.mobilia.Activities.SplashActivity;
-import net.elshaarawy.mobilia.Data.MobiliaContract;
 import net.elshaarawy.mobilia.R;
 import net.elshaarawy.mobilia.Widgets.OffersWidget;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static net.elshaarawy.mobilia.Data.MobiliaContract.CategoriesColumns;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.FurnitureColumns;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.ShopsColumns;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.OffersColumns;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_CATEGORIES;
-import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_FURNATURE;
+import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_FURNITURE;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_SHOPS;
 import static net.elshaarawy.mobilia.Data.MobiliaContract.ProviderUris.CONTENT_OFFERS;
 
@@ -122,8 +117,8 @@ public class LoadDataService extends Service {
 
                         mFurnitureContentValues[i++] = values1;
                     }
-                    mResolver.delete(CONTENT_FURNATURE, "", null);
-                    mResolver.bulkInsert(CONTENT_FURNATURE, mFurnitureContentValues);
+                    mResolver.delete(CONTENT_FURNITURE, "", null);
+                    mResolver.bulkInsert(CONTENT_FURNITURE, mFurnitureContentValues);
 
 
                     //get Shops

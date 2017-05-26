@@ -21,19 +21,22 @@
         </activity>
         <activity
             android:name=".Activities.MainActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:launchMode="singleTop" />
 
         <provider
             android:name=".Data.MobiliaProvider"
-            android:exported="true"
-            android:authorities="net.elshaarawy.mobilia" />
+            android:authorities="net.elshaarawy.mobilia"
+            android:exported="true" />
 
         <service
             android:name=".Services.LoadDataService"
             android:exported="false" />
 
         <activity android:name=".Activities.FurnitureDetailsActivity" />
-        <activity android:name=".Activities.ShopDetailsActivity" />
+        <activity
+            android:name=".Activities.ShopDetailsActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".Activities.OfferDetailsActivity" />
 
         <receiver android:name=".Widgets.OffersWidget">

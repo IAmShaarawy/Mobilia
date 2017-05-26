@@ -8,6 +8,11 @@
     android:orientation="vertical"
     tools:context="net.elshaarawy.mobilia.Activities.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="@color/colorPrimaryDark"></LinearLayout>
+
     <android.support.design.widget.CollapsingToolbarLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/toolbar_height"

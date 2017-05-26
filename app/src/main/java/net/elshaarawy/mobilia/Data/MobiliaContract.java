@@ -94,10 +94,9 @@ public class MobiliaContract {
 
     public interface ProviderUris {
         Uri CONTENT_CATEGORIES = BASE_CONTENT_URI.buildUpon().appendPath(Paths.CATEGORIES).build();
-        Uri CONTENT_FURNATURE = BASE_CONTENT_URI.buildUpon().appendPath(Paths.FURNITURE).build();
+        Uri CONTENT_FURNITURE = BASE_CONTENT_URI.buildUpon().appendPath(Paths.FURNITURE).build();
         Uri CONTENT_SHOPS = BASE_CONTENT_URI.buildUpon().appendPath(Paths.SHOPS).build();
         Uri CONTENT_OFFERS = BASE_CONTENT_URI.buildUpon().appendPath(Paths.OFFERS).build();
-        Uri CONTENT_SHOPS_OFFERS = BASE_CONTENT_URI.buildUpon().appendPath(Paths.SHOPS_OFFERS).build();
     }
 
     public interface MatchingCodes {
@@ -105,7 +104,6 @@ public class MobiliaContract {
         int FURNITURE = 1010;
         int SHOPS = 1020;
         int OFFERS = 1030;
-        int SHOPS_OFFERS = 1040;
     }
 
     public interface MimeTypes {
@@ -113,7 +111,6 @@ public class MobiliaContract {
         String FURNITURE_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.FURNITURE;
         String SHOPS_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.SHOPS;
         String OFFERS_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.OFFERS;
-        String SHOPS_OFFERS_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE+"/"+AUTHORITY+"/"+Paths.SHOPS_OFFERS;
     }
 
 }
