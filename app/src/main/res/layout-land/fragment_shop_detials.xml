@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -71,20 +72,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
                 <Button
                     android:id="@+id/d_shop_phone"
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
                     android:layout_height="37dp"
+                    android:layout_weight="0.5"
                     android:text="@string/shop_call" />
 
                 <Button
                     android:id="@+id/d_shop_web"
                     android:layout_width="0dp"
-                    android:layout_weight="0.5"
                     android:layout_height="37dp"
+                    android:layout_weight="0.5"
 
 
                     android:text="@string/shop_website" />
@@ -95,39 +97,56 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="28dp"
-        android:padding="1dp"
         android:layout_marginTop="8dp"
         android:background="@color/colorPrimary"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="1dp">
 
         <TextView
+            android:id="@+id/shop_about_tab"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:textColor="@color/white"
             android:background="@color/colorAccent"
             android:contentDescription="@string/cd_shop_about_tab"
-            android:id="@+id/shop_about_tab"
+            android:foreground="?android:attr/selectableItemBackground"
             android:gravity="center"
             android:text="@string/shop_about"
-            android:foreground="?android:attr/selectableItemBackground" />
+            android:textColor="@color/white" />
 
         <TextView
-            android:gravity="center"
-            android:layout_width="0dp"
-            android:textColor="@color/white"
-            android:layout_height="match_parent"
             android:id="@+id/shop_offers_tab"
-            android:text="@string/shop_offers"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="0.5"
             android:contentDescription="@string/cd_shop_offers_tab"
-            android:foreground="?android:attr/selectableItemBackground" />
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/shop_offers"
+            android:textColor="@color/white" />
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:id="@+id/about_offers_container"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/about_offers_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></FrameLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id">
+
+        </com.google.android.gms.ads.AdView>
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.squareup.picasso.Picasso;
 
 import net.elshaarawy.mobilia.Data.Entities.FurnitureEntity;
@@ -31,6 +33,8 @@ public class FurnitureDetailsFragment extends Fragment {
     private static final String EXTRA_IS_LARGE = "extra_is_large";
     private FurnitureEntity mFurnitureEntity;
     private boolean isLarge;
+
+    private AdView mAdView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -82,6 +86,10 @@ public class FurnitureDetailsFragment extends Fragment {
         TextView offerBody = (TextView) view.findViewById(R.id.d_furniture_body);
         offerBody.setText(mFurnitureEntity.getBody());
         offerBody.setContentDescription(mFurnitureEntity.getBody());
+
+        mAdView = (AdView) view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         return view;
     }

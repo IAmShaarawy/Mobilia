@@ -19,6 +19,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import net.elshaarawy.mobilia.Data.Entities.ShopEntity;
 import net.elshaarawy.mobilia.R;
@@ -40,6 +42,7 @@ public class ShopDetailsFragment extends Fragment implements View.OnClickListene
     private Button mPhone, mWebSite;
 
     private FragmentManager mFragmentManager;
+    private AdView mAdView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -108,6 +111,9 @@ public class ShopDetailsFragment extends Fragment implements View.OnClickListene
                 .detach(offersFragment)
                 .replace(R.id.about_offers_container, aboutFragment, ABOUT_TAG)
                 .commit();
+        mAdView = (AdView) view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         return view;
     }

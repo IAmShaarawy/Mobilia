@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.squareup.picasso.Picasso;
 
 import net.elshaarawy.mobilia.Data.Entities.OfferEntity;
@@ -30,6 +32,7 @@ public class OfferDetailsFragment extends Fragment {
     private static final String EXTRA_IS_LARGE = "extra_is_large";
     private OfferEntity mOfferEntity;
     private boolean isLarge;
+    private AdView mAdView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -80,6 +83,9 @@ public class OfferDetailsFragment extends Fragment {
         offerBody.setText(mOfferEntity.getBody());
         offerBody.setContentDescription(mOfferEntity.getBody());
 
+        mAdView = (AdView) view.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         return view;
     }
 
